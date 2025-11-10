@@ -2,16 +2,19 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "5.96.0"
+      version = "6.16.0"
     }
   }
   backend "s3" {
-    bucket    = "sun78s-bucket"
-    key       = "aws-vpc"
+    bucket    = "new-bucket-78s"
+    key       = "aws-vpc-expense-dev-proj"
     region = "us-east-1"
-    dynamodb_table = "terraform_locking"
+    dynamodb_table = "new-table-78s"
+    # encrypt = true
+    # use_lockfile = true
   }
 }
   provider "aws" {
     region  = "us-east-1"
   }
+
